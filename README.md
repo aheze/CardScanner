@@ -1,7 +1,7 @@
 # CardScanner
 
 ## Example repo for [Using Vision to scan images from photo library](https://stackoverflow.com/q/62373844/14351818)
-### Also applies to [Bounding Box from VNDetectRectangleRequest is not correct size when used as child VC](https://stackoverflow.com/q/64759383/14351818)
+### Also applies to [Bounding Box from VNDetectRectangleRequest is not correct size when used as child VC](https://stackoverflow.com/q/64759383/14351818) - see commit [7f15c9a](https://github.com/aheze/CardScanner/tree/7f15c9ac143f27d56e890095ef896d2a9f851948)
 
 First let's look at `boundingBox`, which is a "normalized" rectangle. Apple says 
 
