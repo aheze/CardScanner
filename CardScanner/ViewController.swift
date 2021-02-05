@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBAction func pickImage(_ sender: Any) {
         let picker = UIImagePickerController()
-        picker.allowsEditing = true
+        picker.allowsEditing = false
         picker.delegate = self
         self.present(picker, animated: true)
     }
@@ -44,7 +44,7 @@ extension ViewController {
             
             request.minimumAspectRatio = 0.0
             request.maximumAspectRatio = 1.0
-            request.maximumObservations = 0
+            request.maximumObservations = 1
             
             let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage, orientation: .up)
             
@@ -122,9 +122,10 @@ extension ViewController {
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.editedImage] as? UIImage else { return }
+        guard let image = info[.originalImage] as? UIImage else { return }
         imageView.image = image
         detectCard()
+        
         dismiss(animated: true)
     }
 }
